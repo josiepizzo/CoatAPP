@@ -8,17 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josiepizzo/CoatAPP.git"
+    "url": "git+https://github.com/josiepizzo/coatapp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/josiepizzo/CoatAPP/issues"
+    "url": "https://github.com/josiepizzo/coatapp/issues"
   },
-  "homepage": "https://github.com/josiepizzo/CoatAPP#readme",
+  "homepage": "https://github.com/josiepizzo/coatapp#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.11.1"
   }
 }

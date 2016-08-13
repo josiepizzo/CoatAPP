@@ -36,7 +36,7 @@ app.get('/', function(req,res){
 	res.render('index');
 });
 
-//donator page  (html)
+//donator page (html)
 app.get('/donator', function(req,res){
 	res.render('donator');
 });
