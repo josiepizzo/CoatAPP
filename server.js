@@ -32,7 +32,11 @@ app.listen(port, function(){
 //=========================================================
 
 //homepage or root (html)
-//app.get('/', function(req,res){
-//	res.render('index');
-//});
+app.get('/', function(req,res){
+	res.render('index');
+});
 
+//donator page  (html)
+app.get('/donator', function(req,res){
+	res.render('donator');
+});
