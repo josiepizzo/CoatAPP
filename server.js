@@ -2,6 +2,18 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 
+var models = require('./models')
+//var inventory = require('./models')['inventory'];
+//var transaction = require('./models')['transaction'];
+
+console.log('i am about to create the tables');
+models.sequelize.sync({force:true});
+console.log('i just created the tables');
+//user.sync({force:true});
+//inventory.sync({force:true});
+//transaction.sync({force:true});
+
+
 var app = express();
 
 //line below allows anything that is in this folder to be accessed via the internet
@@ -26,7 +38,7 @@ app.listen(port, function(){
 });
 
 //=========================================================
-//routes to be put in a seperate  controller folder 
+//routes to be put in a seperate controller folder 
 //one file for HTML or new page routes
 //another for same page processing or API routes
 //=========================================================
