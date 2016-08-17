@@ -2,7 +2,32 @@
 <div class="container">
 <div class="row">
 <div class="form-group">
+
 <form method = "POST" action="new-post" />
-Title:<input type="text" name="description" />
-Condition:
-<form action=" {{this.id}}?_method=PUT" method="POST">
+
+Title:
+<input type="text" name="description" />
+
+Photo:
+<input type="file" name="pic" accept="image/*">
+
+Type: 
+<input type="radio" name="condition" value="Jacket" />
+<input type="radio" name="condition" value="Coat" />
+
+Condition: 
+<input type="radio" name="condition" value="new" />
+<input type="radio" name="condition" value="Slightly warn" />
+
+Gender:
+<input type="radio" name="category" value="Man" />
+<input type="radio" name="category" value="Woman" />
+<input type="radio" name="category" value="Girl" />
+<input type="radio" name="category" value="Boy" />
+
+Size
+<input type="radio" name="size" value="Small" />
+<input type="radio" name="size" value="Medium" />
+<input type="radio" name="size" value="Large" />
+
+
