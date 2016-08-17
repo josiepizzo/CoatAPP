@@ -6,13 +6,8 @@ var models = require('./models')
 //var inventory = require('./models')['inventory'];
 //var transaction = require('./models')['transaction'];
 
-console.log('i am about to create the tables');
-models.sequelize.sync({force:true});
-console.log('i just created the tables');
-//user.sync({force:true});
-//inventory.sync({force:true});
-//transaction.sync({force:true});
 
+models.sequelize.sync({force:true});
 
 var app = express();
 
@@ -51,4 +46,8 @@ app.get('/', function(req,res){
 //donator page (html)
 app.get('/donator', function(req,res){
 	res.render('donator');
+});
+//coats page(html)
+app.get('/coats', function(req,res){
+	res.render('coats');
 });
