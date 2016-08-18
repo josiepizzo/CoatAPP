@@ -1,31 +1,42 @@
-<h1 class="header">Coat Details</h1>
+<h1 class="text-center" class="header">Coat Details</h1>
 <div class="container">
-<div class="row">
-<div class="form-group">
 
-<form method = "POST" action="new-post" />
+      <div class="form-group">
+                
+               <h4>Title:</h4>
+               <input type="text" name="description" />
+       
+               <h4>Upload Photo:</h4>
+               <input type="file" name="pic" accept="image/*">
 
-Title:
-<input type="text" name="description" /><br><br>
+       		<form role="form">
+            <div class="radio">
+               <h4>Type:</h4> 
+               <label><input type="radio" name="condition" value="Jacket">Jacket</label>
+               <label><input type="radio" name="condition" value="Coat">Coat</label>
+            </div>
+               </form>
+          	
+          	<h4>Condition:</h4>
+          	<div class="radio">
+              <label><input type="radio" name="condition" value="new">New</label>           
+              <label><input type="radio" name="condition" value="Slightly warn">Slightly warn</label>
+           	</div>
+         
+              <h4>Gender:</h4>
+               <div class="radio">
+	               <label><input type="radio" name="category" value="Man">Man</label>
+	               <label><input type="radio" name="category" value="Woman">Woman</label>
+	               <label><input type="radio" name="category" value="Girl">Girl</label>
+	               <label><input type="radio" name="category" value="Boy">Boy</label>
+           		</div>
 
-Photo:
-<input type="file" name="pic" accept="image/*"><br><br>
-
-Type: 
-<input type="radio" name="condition" value="Jacket" />
-<input type="radio" name="condition" value="Coat" /><br><br>
-
-Condition: 
-<input type="radio" name="condition" value="new" />
-<input type="radio" name="condition" value="Slightly warn" /><br><br>
-
-Gender:
-<input type="radio" name="category" value="Man" />
-<input type="radio" name="category" value="Woman" />
-<input type="radio" name="category" value="Girl" />
-<input type="radio" name="category" value="Boy" /><br><br>
-
-Size
-<input type="radio" name="size" value="Small" />
-<input type="radio" name="size" value="Medium" />
-<input type="radio" name="size" value="Large" />
+               <h4>Size:</h4>
+               <div class="radio">
+               <label><input type="radio" name="size" value="Small">Small</label>
+               <label><input type="radio" name="size" value="Medium">Medium</label>
+               <label><input type="radio" name="size" value="Large">Large</label>
+            </div> 
+      </div>
+   </div>
+</div>
