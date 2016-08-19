@@ -43,11 +43,30 @@ app.get('/', function(req,res){
 	res.render('index');
 });
 
-//donator page (html)
-app.get('/donator', function(req,res){
-	res.render('donator');
-});
 //coats page(html)
 app.get('/coats', function(req,res){
 	res.render('coats');
+});
+
+
+
+//adding a new coat to item table(api)
+app.post("/new-coat", function(req,res){
+    console.log("I am about to create an item")
+    models.item.create({
+        category:req.body.category,
+        title: req.body.title,
+        type: req.body.type,
+        size: req.body.size,
+        condition: req.body.condition,
+        donatorId: 1//,
+        //image: body.image
+    }).then (function(data){
+        console.log(data);
+    });
+});
+
+//donator page (html)
+app.get('/donator', function(req,res){
+	res.render('donator');
 });

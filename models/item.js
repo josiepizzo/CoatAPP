@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     category: DataTypes.STRING,
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     }, 
     //customer: DataTypes.STRING,
     //transactionDate: DataTypes.DATE(),
