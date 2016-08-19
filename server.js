@@ -38,8 +38,12 @@ app.get('/', function(req, res){
 app.get('/coats', function(req, res){
   res.render('coats.handlebars');
 });
-
-
+app.get('/signup', function(req, res){
+  res.render('signup.handlebars');
+});
+app.get('/login', function(req, res){
+  res.render('login_page');
+});
 
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
