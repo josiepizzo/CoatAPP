@@ -5,7 +5,12 @@ var handlebars = require('express-handlebars');
 var app = express();
 //var app = module.exports = express.createServer();
 //created express server
+var models = require('./models')
+//var inventory = require('./models')['inventory'];
+//var transaction = require('./models')['transaction'];
 
+
+models.sequelize.sync({force:true});
 
 
 //line below allows anything that is in this folder to be accessed via the internet
@@ -70,4 +75,8 @@ app.get('/', function(req,res){
 //donator page (html)
 app.get('/donator', function(req,res){
 	res.render('donator');
+});
+//coats page(html)
+app.get('/coats', function(req,res){
+	res.render('coats');
 });
