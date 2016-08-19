@@ -1,0 +1,115 @@
+<style>
+  .container-login {
+ position: relative;
+ max-width: 460px;
+ width: 100%;
+ margin: 0 auto 100px;
+ padding-top: 30px;
+}
+h2 {
+     text-align: center;
+   }
+
+   .p {
+     text-align: center;
+     padding-top: 130px;
+   }
+   body {
+     padding-top: 20px;
+     padding-bottom: 40px;
+   }
+
+   /* Custom container */
+   .container-narrow {
+     margin: 0 auto;
+     max-width: 700px;
+   }
+   .container-narrow > hr {
+     margin: 30px 0;
+   }
+
+   /* Main marketing message and sign up button */
+   .jumbotron {
+     margin: 60px 0;
+     text-align: center;
+   }
+   .jumbotron h1 {
+     font-size: 72px;
+     line-height: 1;
+   }
+   .jumbotron .btn {
+     font-size: 21px;
+     padding: 14px 24px;
+   }
+</style>
+
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js">
+ </script>
+
+<div class="container-narrow">
+    <div class="jumbotron">
+      <h1>Welcome To Share The Warmth!</h1>
+      <p class="lead">Join us as we help families in our community stay warm
+      this winter with Share the Warmth Now Online.</p><a class=
+      "btn btn-large btn-success" data-target="#basicModal" data-toggle="modal"
+      href="#">Sign up today</a>
+    </div>
+    <hr>
+    <div aria-hidden="true" aria-labelledby="basicModal" class="modal fade" id=
+    "basicModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Register</h4>
+          </div>
+          <div class="container-login">
+          <div class="register"></div>
+          <div class="close">
+            <h1 class="title"></h1>
+          </div><!--Modal Form-->
+          <form autocomplete="off">
+            <div class="input-container">
+              <input id="newName" required="required" type="text"> <label for=
+              "Name">Name</label>
+              <div class="bar"></div>
+            </div>
+            <div class="input-container">
+              <input id="newZipCode" required="required" type="text"> <label for=
+              "Zip Code">Zip Code</label>
+              <div class="bar"></div>
+            </div>
+            <div class="input-container">
+              <input id="newEmail" required="required" type="text"> <label for=
+              "Email Address">Email Address</label>
+              <div class="bar"></div>
+            </div>
+            <div class="input-container">
+              <input id="newPassword" required="required" type="password">
+              <label for="Password">Password</label>
+              <div class="bar"></div>
+            </div>
+            <div class="input-container">
+              <input id="repeatPassword" required="required" type="password">
+              <label for="Repeat Password">Repeat Password</label>
+              <div class="bar"></div>
+            </div>
+            <div class="button-container">
+              <button id="button" type="button"><span>Continue</span></button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© Rutgers 2016</p>
+    </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script> 
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/logIn.js"></script>
+
+
+
+
