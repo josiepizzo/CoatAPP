@@ -25,30 +25,6 @@ app.use(bodyParser.urlencoded({
 
 
 
-app.get('/', function(req, res){
-  res.render('index.handlebars');
-});
-
-app.get('/donator', function(req, res){
-  res.render('donator.handlebars');
-});
-
-app.get('/customer', function(req, res){
-  res.render('customer.handlebars');
-});
-app.get('/', function(req, res){
-  res.render('donator.handlebars');
-});
-
-app.get('/coats', function(req, res){
-  res.render('coats.handlebars');
-});
-app.get('/signup', function(req, res){
-  res.render('signup.handlebars');
-});
-app.get('/login', function(req, res){
-  res.render('login_page');
-});
 
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
@@ -66,15 +42,21 @@ app.listen(port, function(){
 //one file for HTML or new page routes
 //another for same page processing or API routes
 //=========================================================
+app.get('/signup', function(req, res){
+  res.render('signup.handlebars');
+});
 
+app.get('/login', function(req, res){
+  res.render('login_page.handlebars');
+});
 //homepage or root (html)
 app.get('/', function(req,res){
-	res.render('index');
+	res.render('index.handlebars');
 });
 
 //coats page(html)
 app.get('/coats', function(req,res){
-	res.render('coats');
+	res.render('coats.handlebars');
 });
 
 
@@ -96,6 +78,10 @@ app.post("/new-coat", function(req,res){
 });
 
 //donator page (html)
-app.get('/donator', function(req,res){
-	res.render('donator');
+app.get('/about', function(req,res){
+	res.render('about.handlebars');
+});
+
+app.get('/thankyou', function(req, res){
+  res.render('thankyou.handlebars');
 });
