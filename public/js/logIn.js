@@ -35,7 +35,7 @@
              zipCode: '12345',
              email: emailAddress
            }).done(function(response) {
-             //redirect to donate page
+             location.href = '/dashboard';
            })
          
 // Matt is this the code we would use in the post section?         
@@ -66,15 +66,19 @@
        email: userEmail,
        password: userPassword
      }, function(error, authData) {
+      console.log(error, authData);
        if (error) {
          console.log("Login Failed!", error);
          $('#mainEmail').val('');
          $('#mainPassword').val('');
          $('#mainEmail').val('That is incorrect. Try again.');
        } else {
-         location.replace('http://google.com');
-         console.log("Authenticated successfully with payload:",
-           authData);
+          $.post('/login', authData).done(function() {
+             location.replace('/dashboard');
+             console.log("Authenticated successfully with payload:",
+               authData);            
+           });
+
        }
      });
    });

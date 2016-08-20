@@ -1,8 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
+var session = require('express-session');
 
 var app = express();
+
+app.use(session({
+  secret: 'keyboard cat',
+  cookie: {  }
+}));
+
+
 //var app = module.exports = express.createServer();
 //created express server
 var models = require('./models')
@@ -27,6 +35,7 @@ app.use(bodyParser.urlencoded({
 
 
 
+
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 //will be the skeleton of every webpage
 
@@ -42,6 +51,7 @@ app.listen(port, function(){
 //one file for HTML or new page routes
 //another for same page processing or API routes
 //=========================================================
+
 app.get('/signup', function(req, res){
   res.render('signup.handlebars');
 });
@@ -82,6 +92,38 @@ app.get('/about', function(req,res){
 	res.render('about.handlebars');
 });
 
-app.get('/thankyou', function(req, res){
-  res.render('thankyou.handlebars');
+app.get('/dashboard', function(req, res) {
+  console.log('user', req.session.user);
+  if (!req.session.user) {
+    res.redirect('/signup');
+  } else {
+    res.render('dashboard.handlebars');  
+  }
+  
 });
+
+
+
+app.post('/login', function(req, res){
+    console.log(req.body.uid);
+    models.user.findOne({
+        where: {uid: req.body.uid} 
+      }).then (function(data){
+        console.log(data);
+        req.session.user = data;
+        res.end();
+    });
+})
+
+app.post('/create-user', function(req, res){
+    models.user.create({
+        uid: req.body.uid,
+        name: req.body.name,
+        zipcode: req.body.zipCode,
+        email: req.body.email,
+      }).then (function(data){
+        console.log(data);
+        req.session.user = data;
+        res.end();
+    });
+})
