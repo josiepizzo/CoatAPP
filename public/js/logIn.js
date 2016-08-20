@@ -16,8 +16,8 @@
      //creates user in firebase
      if (newPassword === repeatPassword) {
        ref.createUser({
-         name: 'josie',
-         zipCode: '12345',
+         name: name,
+         zipCode: zipCode,
          email: emailAddress,
          password: newPassword
        }, function(error, userData) {
@@ -31,28 +31,12 @@
 
            $.post('/create-user', {
              uid: userData.uid,
-             name: 'josie',
-             zipCode: '12345',
+             name: name,
+             zipCode: zipCode,
              email: emailAddress
            }).done(function(response) {
              location.href = '/dashboard';
-           })
-         
-// Matt is this the code we would use in the post section?         
-          //{
-//   "rules": {
-//     "users": {
-//       "$uid": {
-//         // grants write access to the owner of this user account whose uid must exactly match the key ($uid)
-//         ".write": "auth !== null && auth.uid === $uid",
-
-//         // grants read access to any user who is logged in with an email and password
-//         ".read": "auth !== null && auth.provider === 'password'"
-//       }
-//     }
-//   }
-// }
-
+           })         
          }
 
        });
