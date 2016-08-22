@@ -1,4 +1,8 @@
 /*css for carousel*/
+#forms_subhead{
+  font-size: 24px;
+  text-align: center;
+}
 h3 {
   display: inline-block;
   padding: 10px;
@@ -54,4 +58,7 @@ html,body,.carousel,.carousel-inner,.carousel-inner .item {
 
 .item:nth-child(3) {
   background: #E46653;
+}
+#top_margin{
+  margin-top: 50px;
 }
