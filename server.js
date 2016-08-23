@@ -56,7 +56,7 @@ app.listen(port, function(){
 //=========================================================
 //routes to be put in a seperate  controller folder 
 //one file for HTML or new page routes
-//another for same page processing or API routes
+//another for same page processing ornod API routes
 //=========================================================
 
 app.get('/login', function(req, res){

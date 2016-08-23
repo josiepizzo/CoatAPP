@@ -8,8 +8,8 @@
      $('.container').stop().removeClass('active');
    });
    $('#button').on('click', function() {
-     var name = $('name').val();
-     var zipCode = $('zipCode').val();
+     var name = $('#newName').val();
+     var zipCode = $('#newZipCode').val();
      var emailAddress = $('#newEmail').val();
      var newPassword = $('#newPassword').val();
      var repeatPassword = $('#repeatPassword').val();
