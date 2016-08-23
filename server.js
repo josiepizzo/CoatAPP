@@ -2,6 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var session = require('express-session');
+var cloudinary = require('cloudinary');
+
+cloudinary.config({ 
+  cloud_name: 'piccloud', 
+  api_key: '843697886524664', 
+  api_secret: '20J5L4EBgIoyCKbwYanAWJI3Qpc' 
+});
 
 var app = express();
 
@@ -65,25 +72,37 @@ app.get('/coats', function(req,res){
 	res.render('coats.handlebars');
 });
 
+//inventory page (html)
+//app.get('/inventory', function(req,res){
+    //get all coats inn database
 
+    //models.item.find()
+
+   // res.render('inventory.handlebars');
+//});
+
+app.get('/inventory', function(req,res){
+    res.render('inventory.handlebars');
+});
 
 //adding a new coat to item table(api)
 app.post("/new-coat", function(req,res){
     console.log("I am about to create an item")
+
     models.item.create({
         category:req.body.category,
         title: req.body.title,
         type: req.body.type,
         size: req.body.size,
-        condition: req.body.condition,
-        donatorId: 1//,
+        condition: req.body.condition
         //image: body.image
     }).then (function(data){
-        console.log(data);
+        console.log('data');
+        res.redirect('/inventory');
     });
 });
 
-//donator page (html)
+//about page (html)
 app.get('/about', function(req,res){
 	res.render('about.handlebars');
 });
@@ -91,7 +110,7 @@ app.get('/about', function(req,res){
 app.get('/dashboard', function(req, res) {
   console.log('user', req.session.user);
   if (!req.session.user) {
-    res.redirect('/signup');
+    res.redirect('/');
   } else {
     res.render('dashboard.handlebars');  
   }
