@@ -94,7 +94,8 @@ app.post("/new-coat", function(req,res){
         title: req.body.title,
         type: req.body.type,
         size: req.body.size,
-        condition: req.body.condition
+        condition: req.body.condition,
+        zipcode: req.session.user.zipcode
         //image: body.image
     }).then (function(data){
         console.log('data');
@@ -108,7 +109,7 @@ app.get('/about', function(req,res){
 });
 
 app.get('/dashboard', function(req, res) {
-  console.log('user', req.session.user);
+  console.log('THIS IS REQ.SESSION.USER', req.session.user);
   if (!req.session.user) {
     res.redirect('/');
   } else {
