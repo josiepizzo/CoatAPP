@@ -81,7 +81,9 @@ app.get('/coats', function(req,res){
    // res.render('inventory.handlebars');
 //});
 
-
+app.get('/inventory', function(req,res){
+    res.render('inventory.handlebars');
+});
 
 //adding a new coat to item table(api)
 app.post("/new-coat", function(req,res){
