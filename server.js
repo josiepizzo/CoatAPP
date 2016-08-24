@@ -3,6 +3,9 @@ var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var session = require('express-session');
 var cloudinary = require('cloudinary');
+//The following code builds a URL of the local cloudinary_cors.html file:
+
+
 
 cloudinary.config({ 
   cloud_name: 'piccloud', 
@@ -25,7 +28,7 @@ var models = require('./models')
 //var transaction = require('./models')['transaction'];
 
 
-models.sequelize.sync({force:true});
+models.sequelize.sync();
 
 
 //line below allows anything that is in this folder to be accessed via the internet
@@ -73,14 +76,6 @@ app.get('/coats', function(req,res){
 });
 
 //inventory page (html)
-//app.get('/inventory', function(req,res){
-    //get all coats inn database
-
-    //models.item.find()
-
-   // res.render('inventory.handlebars');
-//});
-
 app.get('/inventory', function(req,res){
     res.render('inventory.handlebars');
 });
