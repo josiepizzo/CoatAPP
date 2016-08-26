@@ -1,3 +1,5 @@
+console.log('I HAVE ACCESSED COATS.JS')
+
 //cloudinary.cloudinary_js_config()
 $.cloudinary.config({ cloud_name: 'josiepizzo', api_key: '989437654536147'});
 
@@ -7,12 +9,13 @@ $.cloudinary.config({ cloud_name: 'josiepizzo', api_key: '989437654536147'});
 
 // $('.upload_form').append($.cloudinary.unsigned_upload_tag("mnfvlfwk", 
 //  { cloud_name: 'josiepizzo' }));
-
+console.log('I AM IN COATS');
 $('.image_field').unsigned_cloudinary_upload("gcvazysc", 
   { cloud_name: 'josiepizzo' }
 ).bind('cloudinarydone', function(e, data) {
-	console.log('data', data);
+	console.log('THIS IS CLOUDINARY DATA ', data);
 	$("#coaturl").val(data.result.url);
+	console.log('THIS IS #coaturl ', data.result.url);
   	$('.coatimage').append($.cloudinary.image(data.result.public_id, 
     { format: 'jpg', width: 150, 
       crop: 'thumb', } ))}
