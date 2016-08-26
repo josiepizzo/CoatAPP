@@ -3,12 +3,11 @@ var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var session = require('express-session');
 var cloudinary = require('cloudinary');
+//The following code builds a URL of the local cloudinary_cors.html file:
+//var cloudinary_cors = "http://" + request.headers.host + "/cloudinary_cors.html";
 
-cloudinary.config({ 
-  cloud_name: 'piccloud', 
-  api_key: '843697886524664', 
-  api_secret: '20J5L4EBgIoyCKbwYanAWJI3Qpc' 
-});
+
+ 
 
 var app = express();
 
@@ -25,7 +24,7 @@ var models = require('./models')
 //var transaction = require('./models')['transaction'];
 
 
-models.sequelize.sync({force:true});
+models.sequelize.sync({});
 
 
 //line below allows anything that is in this folder to be accessed via the internet
@@ -73,15 +72,14 @@ app.get('/coats', function(req,res){
 });
 
 //inventory page (html)
-//app.get('/inventory', function(req,res){
-    //get all coats inn database
-
-    //models.item.find()
-
-   // res.render('inventory.handlebars');
-//});
-
 app.get('/inventory', function(req,res){
+  
+    models.item.findAll({}).then(function(results) {
+      console.log("ITEM TABLE ",results);
+    });
+
+
+
     res.render('inventory.handlebars');
 });
 
@@ -95,8 +93,8 @@ app.post("/new-coat", function(req,res){
         type: req.body.type,
         size: req.body.size,
         condition: req.body.condition,
-        zipcode: req.session.user.zipcode
-        //image: body.image
+        zipcode: req.session.user.zipcode,
+        image: req.body.coaturl
     }).then (function(data){
         console.log('data');
         res.redirect('/inventory');
@@ -142,4 +140,4 @@ app.post('/create-user', function(req, res){
         req.session.user = data;
         res.end();
     });
-})
+});

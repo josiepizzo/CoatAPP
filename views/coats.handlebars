@@ -1,15 +1,21 @@
 
-
 <div class="container">
   <h1 class="text-center" class="header">Post Your Coat</h1>
   <h2 id="forms_subhead">Please enter details about your coat</h2>
-	<form method="POST" action="/new-coat">
+  <div class="image-section">
+    <input type="file" name="file" class="image_field">Upload Image     
+  </div>
+
+
+	<form method="POST" action="/new-coat" class = 'upload_form'>
+      <input type="hidden" id="coaturl" name="coaturl"/>
+      <div class="coatimage"></div>
       <div class="form-group">
                <h4>Title:</h4>
                <input type="text" name="title" />
-       
-               <h4>Upload Photo:</h4>
-               <input type="file" name="pic" accept="image/*">
+                
+               <!--<h4>Upload Photo:</h4>
+               <input type="file" name="pic" accept="image/*">-->
             <div class="radio">
                <h4>Type:</h4> 
                <label><input type="radio" name="type" value="Jacket">Jacket</label>
@@ -44,3 +50,4 @@
    </div>
   
 </div>
+<script src="/js/coats.js"></script>
