@@ -56,22 +56,19 @@ src: url('../fonts/712-icon-fonts.svg#712-icon-fonts') format('svg');
 .icon-twitter-alt:before {
   content: "\e06b";
 }
-.icon-facebook-places:before {
-  content: "\e01e";
-}
-.icon-facebook:before {
-  content: "\e08e";
-}
-.icon-facebook-alt:before {
-  content: "\e08f";
-}
+
 .icon-github:before {
   content: "\e090";
 }
 .icon-github-alt:before {
   content: "\e091";
 }
-
+.icon-linkedin:before {
+  content: "\e039";
+}
+.icon-linkedin-alt:before {
+  content: "\e03a";
+}
 
 /*css for carousel*/
 #forms_subhead{
@@ -141,7 +138,9 @@ body {
 /*---------------------------------------
  **   SECTION:  OUR TEAM              -----
 -----------------------------------------*/
-
+.icon_imgs {
+  padding:0px !important;
+}
 .our-team {
   padding-bottom: 66px;
   padding-top: 100px;
@@ -171,9 +170,9 @@ body {
 }
 .team-member .member-details {
   position: relative;
-  display: inline-block;
+  display: block;
   padding-bottom: 5px;
-  padding-left: 70px;
+  text-align: center;
 }
 .team-member:hover .details {
   top: 0;
@@ -229,4 +228,93 @@ body {
 }
 .donate-btn{
   margin-left: 190px;
+}
+.btn-success{
+  margin-left: 440px;
+  margin-top: 30px;
+}
+/*---------------------------------------
+ **   BORDER BOTTOMS                 -----
+-----------------------------------------*/
+
+.white-border-bottom:before {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: #F5F5F5;
+  bottom: -9px;
+  left: 25%;
+}
+.dark-border-bottom:before {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: #404040;
+  bottom: -9px;
+  left: 25%;
+}
+.red-border-bottom:before {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 75%;
+  height: 2px;
+  background: #e96656;
+  bottom: -9px;
+  left: 12.5%;
+}
+.green-border-bottom:before {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 75%;
+  height: 2px;
+  background: #34d293;
+  bottom: -9px;
+  left: 12.5%;
+}
+.blue-border-bottom:before {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 75%;
+  height: 2px;
+  background: #3ab0e2;
+  bottom: -9px;
+  left: 12.5%;
+}
+.yellow-border-bottom:before {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 75%;
+  height: 2px;
+  background: #f7d861;
+  bottom: -9px;
+  left: 12.5%;
+}
+/*---------------------------------------
+ **   signup form                 -----
+-----------------------------------------*/
+.input-container {
+  padding: 5px 0px;
+}
+form{
+  padding: 30px !important;
+}
+.form_btn {
+  margin-top:15px;
+}
+.labels {
+  margin-left: 15px;
 }
