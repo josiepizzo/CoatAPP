@@ -1,2 +1,41 @@
+<link rel="stylesheet" type="text/css" href="/css/inventory.css">
+  
 
-<h1>This is the inventory/item display page</h1>
+  <ul class="cd-items cd-container">
+  {{#each items}}
+    <li class="cd-item">
+      <img src="{{this.image}}" alt="Item Preview" data-title="{{this.title}}">
+      <a href="#0" class="cd-trigger">Quick View</a>
+    </li> <!-- cd-item -->
+{{/each}}
+  </ul> <!-- cd-items -->
+
+  <div class="cd-quick-view">
+    <div class="cd-slider-wrapper">
+      <ul class="cd-slider">
+        <li class="selected">
+            <img src="img/item-1.jpg">
+        </li>
+      </ul> <!-- cd-slider -->
+    </div> <!-- cd-slider-wrapper -->
+
+    <div class="cd-item-info">
+      <h2></h2>
+      <p></p>
+
+      <ul class="cd-item-action">
+        <li><button class="add-to-cart">Add to cart</button></li>         
+        <li><a href="#0">Learn more</a></li>  
+      </ul> <!-- cd-item-action -->
+    </div> <!-- cd-item-info -->
+    <a href="#0" class="cd-close">Close</a>
+  </div> <!-- cd-quick-view -->   
+    
+  <script src ="/js/inventory/main.js" type="text/javascript"></script>
+
+  <script src ="/js/inventory/modernizr.js" type="text/javascript"></script>
+
+  <script src ="/js/inventory/velocity.min.js" type="text/javascript"></script>
+  
+
+  
