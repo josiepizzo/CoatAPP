@@ -15,7 +15,9 @@ $('.image_field').unsigned_cloudinary_upload("gcvazysc",
 ).bind('cloudinarydone', function(e, data) {
 	console.log('THIS IS CLOUDINARY DATA ', data);
 	$("#coaturl").val(data.result.url);
+
 	console.log('THIS IS #coaturl ', data.result.url);
+	console.log(coaturl)
   	$('.coatimage').append($.cloudinary.image(data.result.public_id, 
     { format: 'jpg', width: 150, 
       crop: 'thumb', } ))}
