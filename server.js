@@ -75,12 +75,15 @@ app.get('/coats', function(req,res){
 app.get('/inventory', function(req,res){
   
     models.item.findAll({}).then(function(results) {
-      console.log("ITEM TABLE ",results);
+      console.log("ITEM TABLE ", results);
+      res.render('inventory.handlebars', {
+      items: results
+    });
     });
 
 
 
-    res.render('inventory.handlebars');
+    
 });
 
 //adding a new coat to item table(api)
