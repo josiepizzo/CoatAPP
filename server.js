@@ -97,7 +97,8 @@ app.post("/new-coat", function(req,res){
         size: req.body.size,
         condition: req.body.condition,
         zipcode: req.session.user.zipcode,
-        image: req.body.coaturl
+        image: req.body.coaturl,
+        donatorId: req.session.user.id
     }).then (function(data){
         console.log('data');
         res.redirect('/inventory');
