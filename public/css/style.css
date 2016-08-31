@@ -101,7 +101,13 @@ body {
 }
 .item{
   height: 100%;
-  margin-top: -100px;
+  margin-top: -200px;
+}
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    .item {
+      
+      margin-top: -200px;
+    }
 }
 .active,
 .carousel-inner {
