@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "barber123",
-    "database": "share_db",
-    "host": "127.0.0.1",
+    "username": "w7psnm40wkhmjh1v",
+    "password": "ola6wibrpapkyumy",
+    "database": "v3xjshah5tng8qno",
+    "host": "uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {

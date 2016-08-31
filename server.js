@@ -47,7 +47,7 @@ app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
-var port = process.env.Port || 3000;
+var port = process.env.PORT || 3000;
 app.listen(port, function(){
 	console.log('connected to', port);
 });
@@ -97,7 +97,8 @@ app.post("/new-coat", function(req,res){
         size: req.body.size,
         condition: req.body.condition,
         zipcode: req.session.user.zipcode,
-        image: req.body.coaturl
+        image: req.body.coaturl,
+        donatorId: req.session.user.id
     }).then (function(data){
         console.log('data');
         res.redirect('/inventory');

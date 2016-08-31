@@ -9,7 +9,7 @@ $.cloudinary.config({ cloud_name: 'josiepizzo', api_key: '989437654536147'});
 
 // $('.upload_form').append($.cloudinary.unsigned_upload_tag("mnfvlfwk", 
 //  { cloud_name: 'josiepizzo' }));
-console.log('I AM IN COATS');
+
 $('.image_field').unsigned_cloudinary_upload("gcvazysc", 
   { cloud_name: 'josiepizzo' }
 ).bind('cloudinarydone', function(e, data) {
