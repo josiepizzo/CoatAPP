@@ -5,6 +5,7 @@
   {{#each items}}
     <li class="cd-item">
       <img src="{{this.image}}" alt="Item Preview" data-title="{{this.title}}">
+      <p data-type= "{{this.type}}" data-size="{{this.size}}"></p>
       <a href="#0" class="cd-trigger">Quick View</a>
     </li> <!-- cd-item -->
 {{/each}}
@@ -20,8 +21,12 @@
     </div> <!-- cd-slider-wrapper -->
 
     <div class="cd-item-info">
+    {{#each items}}
       <h2></h2>
-      <p></p>
+      <p>{{this.type}}</p>
+      <p>{{this.size}}</p>
+      <p>{{this.condition}}</p>
+
 
       <ul class="cd-item-action">
         <li><button class="add-to-cart">Add to cart</button></li>         
@@ -29,6 +34,7 @@
       </ul> <!-- cd-item-action -->
     </div> <!-- cd-item-info -->
     <a href="#0" class="cd-close">Close</a>
+    {{/each}}
   </div> <!-- cd-quick-view -->   
     
   <script src ="/js/inventory/main.js" type="text/javascript"></script>
