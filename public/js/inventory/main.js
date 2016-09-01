@@ -10,6 +10,10 @@ jQuery(document).ready(function($){
 			slectedImageUrl = selectedImage.attr('src');
 
 		var title = selectedImage.data('title')
+		var type = selectedImage.data('type')
+		var size = selectedImage.data('size') 
+		var condition = selectedImage.data('condition')
+
 		console.log(title)
 		$('body').addClass('overlay-layer');
 		animateQuickView(selectedImage, sliderFinalWidth, maxQuickWidth, 'open');
@@ -54,10 +58,15 @@ jQuery(document).ready(function($){
 	// 	} 
 	// }
 
-	function updateQuickView(url, title) {
+	function updateQuickView(url, title, type, size, condtion) {
 		console.log('url', url);
 		$('.cd-quick-view .cd-slider li img').attr("src", url);
 		$('.cd-quick-view .cd-item-info h2').text(title);
+		
+		$('.cd-quick-view .cd-item-info h3.type').text(type);
+		$('.cd-quick-view .cd-item-info h3.size').text(size);
+		$('.cd-quick-view .cd-item-info h3.condition').text(condition);
+
 	}
 
 	function resizeQuickView() {
