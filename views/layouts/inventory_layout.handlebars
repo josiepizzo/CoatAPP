@@ -62,11 +62,27 @@
          <li><a href="/">Home</a></li>
          <li><a href="/contact">Contact Us</a></li>
          <li><a href="/about">About Us</a></li>
+         {{#if user}}
+           <li>
+             <a href="/inventory">Inventory</a>
+           </li>                  
+         {{/if}} 
+
        </ul>
        <ul class="nav pull-right navbar-nav">
-         <li>
-          <a href="/login">Log In</a>
-         </li>
+
+         {{#if user}}
+           <li>
+             <a href="/profile">Hello {{user.name}}! </a>
+           </li>                  
+           <li>
+             <a href="/logout">Logout</a>
+           </li>         
+         {{else}}
+           <li>
+            <a href="/login">Log In</a>
+           </li>         
+         {{/if}} 
          <li>
          </li>
        </ul>
@@ -75,7 +91,6 @@
  </div><!-- /.navbar -->
 </div>
   <div class="container">
-    <h1 style="color:#fff;">Items</h1>
   </div>
   {{{body}}}
 

@@ -3,13 +3,14 @@ var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var session = require('express-session');
 var cloudinary = require('cloudinary');
+
 //The following code builds a URL of the local cloudinary_cors.html file:
 //var cloudinary_cors = "http://" + request.headers.host + "/cloudinary_cors.html";
 
 
- 
 
 var app = express();
+
 
 app.use(session({
   secret: 'keyboard cat',
@@ -24,9 +25,7 @@ var models = require('./models')
 //var transaction = require('./models')['transaction'];
 
 
-models.sequelize.sync({
-  force: true
-});
+models.sequelize.sync({});
 
 
 
@@ -60,6 +59,11 @@ app.listen(port, function(){
 //one file for HTML or new page routes
 //another for same page processing ornod API routes
 //=========================================================
+app.use(function(req, res, next) {
+  console.log('user', req.session.user);
+  app.locals.user = req.session.user;
+  next();
+})
 
 app.get('/login', function(req, res){
   res.render('login_page.handlebars');
@@ -71,7 +75,11 @@ app.get('/', function(req,res){
 
 //coats page(html)
 app.get('/coats', function(req,res){
-	res.render('coats.handlebars');
+  if (!req.session.user) {
+    res.redirect('/');
+  } else {
+    res.render('coats.handlebars');
+  }  	
 });
 
 //inventory page (html)
@@ -122,6 +130,26 @@ app.get('/dashboard', function(req, res) {
   
 });
 
+app.get('/profile', function(req, res) {
+  console.log('THIS IS REQ.SESSION.USER', req.session.user);
+  if (!req.session.user) {
+    res.redirect('/');
+  } else {
+    models.user.findOne({
+        where: {id: req.session.user.id}
+        //include:[{model: models.item, as: 'donator'}]
+      }).then (function(data){
+        console.log('data', data);
+        res.render('profile', {
+          user: data,
+          layout: 'inventory_layout.handlebars'
+        });  
+    });
+
+
+  }
+  
+});
 
 
 app.post('/login', function(req, res){
@@ -146,4 +174,9 @@ app.post('/create-user', function(req, res){
         req.session.user = data;
         res.end();
     });
+});
+
+app.get('/logout', function(req,res){
+  delete req.session.user;
+  res.redirect('/');
 });

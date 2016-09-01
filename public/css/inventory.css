@@ -14,10 +14,7 @@ Primary style
 }
 
 body {
-  font-size: 100%;
-  font-family: "PT Sans", sans-serif;
-  color: #3e585f;
-  background-color: #47374e;
+
 }
 body::after {
   /* dark overlay layer - visible when we fire .cd-quick-view */
@@ -43,10 +40,7 @@ body::after {
   }
 }
 
-a {
-  color: #f82f53;
-  text-decoration: none;
-}
+
 
 img {
   max-width: 100%;
