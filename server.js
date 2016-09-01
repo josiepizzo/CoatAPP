@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var session = require('express-session');
 var cloudinary = require('cloudinary');
-
+var path = require('path');
 //The following code builds a URL of the local cloudinary_cors.html file:
 //var cloudinary_cors = "http://" + request.headers.host + "/cloudinary_cors.html";
 
@@ -31,7 +31,7 @@ models.sequelize.sync({});
 
 //line below allows anything that is in this folder to be accessed via the internet
 //inside the public folder the css file and any images can be stored
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //bodyParser will allow any post data to appear as a nice object 
 //and can be referenced by req.body
