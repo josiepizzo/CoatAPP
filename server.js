@@ -29,6 +29,7 @@ models.sequelize.sync({
 });
 
 
+
 //line below allows anything that is in this folder to be accessed via the internet
 //inside the public folder the css file and any images can be stored
 app.use(express.static(__dirname + '/public'));
@@ -74,18 +75,17 @@ app.get('/coats', function(req,res){
 });
 
 //inventory page (html)
-app.get('/inventory', function(req,res){
+app.get('/inventory', function(req,res) {
   
-    models.item.findAll({}).then(function(results) {
+    models.item.findAll({
+      include:[models.user]
+    }).then(function(results) {
       console.log("ITEM TABLE ", results);
       res.render('inventory.handlebars', {
-      items: results,
-      layout: 'inventory_layout.handlebars'
+        items: results,
+        layout: 'inventory_layout.handlebars'
+      });
     });
-
-
-
-    
 });
 
 //adding a new coat to item table(api)
