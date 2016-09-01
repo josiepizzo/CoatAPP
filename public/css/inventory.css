@@ -173,8 +173,8 @@ header h1 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   -webkit-transition: opacity 0.2s, background-color 0.2s;
   -moz-transition: opacity 0.2s, background-color 0.2s;
   transition: opacity 0.2s, background-color 0.2s;
@@ -182,34 +182,12 @@ header h1 {
 .no-touch .cd-trigger:hover {
   background: rgba(0, 0, 0, 0.2);
 }
-@media only screen and (min-width: 1024px) {
-  .cd-trigger {
-    /* always visible on small devices */
-    visibility: visible;
-    opacity: 1;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-trigger {
-    /* only visible on hover on big devices */
-    opacity: 0;
-  }
-}
 
-@media only screen and (min-width: 1170px) {
-  .no-touch .cd-item:hover .cd-trigger {
-    opacity: 1;
-  }
-
-  .touch .cd-item .cd-trigger {
-    opacity: 1;
-  }
-}
 .cd-quick-view {
   /* quick view non available on small devices */
   display: none;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen {
   .cd-quick-view {
     display: block;
     position: fixed;

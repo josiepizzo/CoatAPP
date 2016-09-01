@@ -24,7 +24,9 @@ var models = require('./models')
 //var transaction = require('./models')['transaction'];
 
 
-models.sequelize.sync({});
+models.sequelize.sync({
+  force: true
+});
 
 
 //line below allows anything that is in this folder to be accessed via the internet
@@ -77,8 +79,8 @@ app.get('/inventory', function(req,res){
     models.item.findAll({}).then(function(results) {
       console.log("ITEM TABLE ", results);
       res.render('inventory.handlebars', {
-      items: results
-    });
+      items: results,
+      layout: 'inventory_layout.handlebars'
     });
 
 
