@@ -14,10 +14,14 @@ module.exports = function(sequelize, DataTypes) {
     condition: DataTypes.STRING,
     image: DataTypes.STRING,
     zipcode: DataTypes.STRING
+    
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+      item.belongsTo(models.user, {foreignKey: 'donatorId'});
+       //item.belongsTo(models.user, {
+         // as: 'donator'
+       //});
       }
     }
   });

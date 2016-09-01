@@ -25,6 +25,8 @@ module.exports = function(sequelize, DataTypes) {
               name: 'donatorId',
               allowNull: true
             }
+            
+
           });
           user.hasMany(models.item, {
               foreignKey: {
