@@ -31,7 +31,7 @@ models.sequelize.sync({});
 
 //line below allows anything that is in this folder to be accessed via the internet
 //inside the public folder the css file and any images can be stored
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/Public'));
 
 //bodyParser will allow any post data to appear as a nice object 
 //and can be referenced by req.body
