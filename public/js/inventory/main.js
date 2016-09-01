@@ -3,16 +3,23 @@ jQuery(document).ready(function($){
 	//maxQuickWidth --> this is the max-width of the quick-view panel
 	var sliderFinalWidth = 400,
 		maxQuickWidth = 900;
+	var email = null;
 
+	$('.add-to-cart').on('click', function(event) {
+		event.preventDefault();
+		$('.email').text('Email was sent to the owner (' + email + '). Please wait for a response!');
+	})
 	//open the quick view panel
-	$('.cd-trigger').on('click', function(event){
+	$('.cd-trigger').on('click', function(event) {
+		$('.email').text('');
 		var selectedImage = $(this).parent('.cd-item').children('img'),
 			slectedImageUrl = selectedImage.attr('src');
 
-		var title = selectedImage.data('title')
-		var type = selectedImage.data('type')
-		var size = selectedImage.data('size') 
-		var condition = selectedImage.data('condition')
+		var title = selectedImage.data('title');
+		var type = selectedImage.data('type');
+		var size = selectedImage.data('size');
+		var condition = selectedImage.data('condition');
+		email = selectedImage.data('email');
 
 		console.log(title)
 		$('body').addClass('overlay-layer');
@@ -20,7 +27,7 @@ jQuery(document).ready(function($){
 
 		//update the visible slider image in the quick view panel
 		//you don't need to implement/use the updateQuickView if retrieving the quick view data with ajax
-		updateQuickView(slectedImageUrl, title);
+		updateQuickView(slectedImageUrl, title, type, size, condition);
 	});
 
 	//close the quick view panel
@@ -58,14 +65,15 @@ jQuery(document).ready(function($){
 	// 	} 
 	// }
 
-	function updateQuickView(url, title, type, size, condtion) {
+	function updateQuickView(url, title, type, size, condition) {
 		console.log('url', url);
 		$('.cd-quick-view .cd-slider li img').attr("src", url);
 		$('.cd-quick-view .cd-item-info h2').text(title);
-		
-		$('.cd-quick-view .cd-item-info h3.type').text(type);
-		$('.cd-quick-view .cd-item-info h3.size').text(size);
-		$('.cd-quick-view .cd-item-info h3.condition').text(condition);
+		console.log('type', type);
+		console.log('size', size);
+		console.log('condition', condition);
+
+		$('.cd-quick-view .cd-item-info span').text('This is a ' + condition + ' ' + type + ' in size ' + size);
 
 	}
 

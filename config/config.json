@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "James36",
-    "database": "share_db",
+    "password": "",
+    "database": "coatapp",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

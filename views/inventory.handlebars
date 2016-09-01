@@ -4,8 +4,8 @@
   <ul class="cd-items cd-container">
   {{#each items}}
     <li class="cd-item">
-      <img src="{{this.image}}" alt="Item Preview" data-title="{{this.title}}">
-      <a href="#0" class="cd-trigger">Quick View</a>
+      <img src="{{this.image}}" alt="Item Preview" data-title="{{this.title}}" data-condition="{{this.condition}}" data-type="{{this.type}}" data-size="{{this.size}}" data-email="{{this.user.email}}">
+      <a href="#0" class="cd-trigger">{{this.title}}</a>
     </li> <!-- cd-item -->
 {{/each}}
   </ul> <!-- cd-items -->
@@ -22,12 +22,14 @@
     <div class="cd-item-info">
       
       <h2></h2>
+      <span id="details"></span>
+      
       
       
 
       <ul class="cd-item-action">
         <li><button class="add-to-cart">Select Coat</button></li>         
-        <li><a href="#0"></a></li>  
+        <li><a class="email"></a></li>  
       </ul> <!-- cd-item-action -->
     </div> <!-- cd-item-info -->
     <a href="#0" class="cd-close">Close</a>

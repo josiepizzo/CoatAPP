@@ -102,6 +102,7 @@ header h1 {
 
 .cd-items {
   padding: 1em 0;
+  list-style-type: none;
 }
 @media only screen and (min-width: 768px) {
   .cd-items {
@@ -229,6 +230,7 @@ header h1 {
 }
 
 .cd-slider {
+  list-style-type: none;
   float: left;
 }
 .cd-slider li {
