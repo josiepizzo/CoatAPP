@@ -47,7 +47,7 @@ app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
-var port = process.env.Port || 3000;
+var port = process.env.PORT || 3000;
 app.listen(port, function(){
 	console.log('connected to', port);
 });
