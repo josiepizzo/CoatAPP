@@ -30,7 +30,7 @@ Show what the library does as concisely as possible, developers should be able t
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+I participate in school and community fund raisers and charities.  In the past I have contributed coats for school drives. Since I am in technology I wanted to give back in a different way.  I thought this app would not be helpful just for myself but for other organizations.
 
 ## Installation
 
@@ -48,6 +48,3 @@ Describe and show how to run the tests with code examples.
 
 Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
 
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
